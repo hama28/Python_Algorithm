@@ -7,3 +7,18 @@ def fibonacci(n):
     return memo[n]
 
 print(fibonacci(6))
+
+a = 1
+b = 1
+print(a)
+print(b)
+a = a + b
+print(a)
+
+while a < 10000:
+    x = a
+    a = a + b
+    print(a)
+    b = a
+    a = a + x
+    print(a)

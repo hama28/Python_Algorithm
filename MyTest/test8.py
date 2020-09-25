@@ -6,7 +6,6 @@
 #h_N m_N #N本目の電車の発車時刻 h_N 時 m_N 分
 
 import datetime
-import numpy
 
 a, b, c = map(int, input().split())
 a = datetime.timedelta(0,0,0,0,a)
@@ -30,8 +29,6 @@ for i in range(len(train)):
     if limit < train[max_index]:
         del train[max_index]
 
-print(train)
-
 limit = limit - b
 
 for i in range(len(train)):
@@ -40,8 +37,12 @@ for i in range(len(train)):
     if limit < train[max_index]:
         del train[max_index]
 
-print(train)
+ans = max(train) - a
 
-limit = limit - a
+def get_h_m_s(ans):
+    m, s = divmod(ans.seconds, 60)
+    h, m = divmod(m, 60)
+    print(str(h).zfill(2) + ':' + str(m).zfill(2))
+    return h, m, s
 
-print(limit)
+get_h_m_s(ans)

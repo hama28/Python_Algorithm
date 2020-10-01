@@ -8,7 +8,7 @@ for i in range(h):
 for i in range(n):
     j,k = map(int, input().split())
     word = ma[j]
-    word = word[:k] + '#' + word[k:]
+    word = word[:k] + '#' + word[k+1:]
     ma[j] = word
 
 for i in ma:
